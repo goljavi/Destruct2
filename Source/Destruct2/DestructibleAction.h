@@ -9,7 +9,7 @@
 #include "DestructibleAction.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(Blueprintable, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class DESTRUCT2_API UDestructibleAction : public UActorComponent
 {
 	GENERATED_BODY()
@@ -23,7 +23,8 @@ public:
 
 	UDestructibleComponent* destructibleComponent;
 
-	void ChangeMat();
+	UFUNCTION(BlueprintCallable)
+		void ChangeMat();
 
 
 protected:
